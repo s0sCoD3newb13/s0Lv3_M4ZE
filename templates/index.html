@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Runner</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        #result-box { margin-top: 20px; padding: 20px; border: 1px solid #ddd; background: #f9f9f9; min-height: 50px; }
+        button { padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Python 스크립트 실행기</h2>
+    <p>아래 버튼을 누르면 서버에서 로직이 실행됩니다. (코드는 비공개)</p>
+    
+    <button onclick="executePython()">스크립트 실행</button>
+
+    <div id="result-box">
+        <strong>결과:</strong> <span id="output">대기 중...</span>
+    </div>
+
+    <script>
+        async function executePython() {
+            const outputElement = document.getElementById('output');
+            outputElement.innerText = "실행 중...";
+
+            try {
+                const response = await fetch('/run-script', { method: 'POST' });
+                const data = await response.json();
+                
+                if (data.status === "success") {
+                    outputElement.innerText = data.output;
+                } else {
+                    outputElement.innerText = "에러 발생: " + data.message;
+                }
+            } catch (error) {
+                outputElement.innerText = "서버 연결 실패";
+            }
+        }
+    </script>
+</body>
+</html>
