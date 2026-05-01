@@ -7,70 +7,44 @@
     <style>
         /* 1. 화면 전체 배경 설정 */
         body {
-            /* 이미지 설정: 파일명이 다르면 여기를 수정하세요 */
-            background-image: url('bg_maze.png');
-            
-            /* 이미지가 화면을 꽉 채우도록 설정 */
+            background-image: url('maze_ctf_main_image.png')
             background-size: cover;
-            
-            /* 이미지가 중앙에 오도록 설정 */
             background-position: center center;
-            
-            /* 이미지가 반복되지 않게 설정 */
             background-repeat: no-repeat;
-            
-            /* 스크롤 해도 배경 고정 */
             background-attachment: fixed;
-            
-            /* 기본 여백 제거 */
             margin: 0;
             padding: 0;
-            
-            /* 기본 글꼴 (코드 느낌) 및 색상 (밝은 청록) */
             font-family: 'Courier New', Courier, monospace;
             color: #e0ffff; 
-            
-            /* 화면 중앙 정렬을 위한 설정 */
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* 화면 높이 전체 사용 */
+            min-height: 100vh;
         }
 
-        /* 2. 기존 게임 콘텐츠가 담길 컨테이너 */
         #game-container {
-            /* 배경 이미지와 겹칠 때 가독성을 위해 어두운 반투명 박스 배치 */
             background-color: rgba(0, 0, 0, 0.7);
-            
-            /* 테두리 포인트 */
             border: 2px solid #00ffff;
             border-radius: 15px;
-            
-            /* 크기 및 여백 */
             width: 90%;
             max-width: 800px;
             padding: 30px;
             text-align: center;
-            
-            /* 입체감 (그림자) */
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
-
-        /* 타이틀 스타일 */
         h1 {
             color: #00ffff;
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
             margin-top: 0;
         }
 
-        /* 여기에 기존 미로 관련 스타일(CSS)을 추가하시면 됩니다. */
     </style>
 </head>
 <body>
 
     <div id="game-container">
         <h1>s0sCoD3 MAZE S0LV3R</h1>
-        <p>미로를 탈출하기 위한 코드를 해독하세요.</p>
+        <p>미로를 탈출하고 FLAG를 찾으세요.</p>
         
         </div>
 
